@@ -1,0 +1,75 @@
+
+
+New Chat
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Quiz Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+    
+
+<!-- Falling Hello Kitty images Container -->
+<div class="hello-kitty-container">
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+    <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Hello Kitty" class="hello-kitty" />
+
+    <!-- Add more Hello Kitty images if needed -->
+</div>
+
+
+
+    <!-- Quiz Container -->
+    <div class="container">
+        <h1>Valentine's Quiz ❤️</h1>
+
+        <!-- Progress Bar -->
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <!-- Question Box -->
+        <div id="question-box">
+            <p id="question">Are you ready to go ahead?</p>
+            <div class="answers">
+                <!-- Answer buttons will be dynamically added here -->
+            </div>
+            <input type="text" id="text-input" style="display: none;" />
+            <div id="feedback"></div>
+        </div>
+
+        <!-- Love Letter (Hidden Initially) -->
+        <div id="love-letter" style="display: none;">
+            <div>
+                <p>You have completed the quiz! Now you will be awarded by</p>
+                <h2>💌 My Love Letter to You 💌</h2>
+                <p>
+                    You are the most special person in my life. Every moment with you feels like a beautiful chapter in the story of my life, and with each passing day, I realize that my favorite part is simply being yours. You know you use to say I'm your missing part of your heart. I tell you, you are my missing part. Without you, my day doesn't feel complete, I myself feel incomplete. In my eyes, you are just beautiful. I love you more than ever! ❤️
+                </p>
+            </div>
+        </div>
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</body>
+</html>

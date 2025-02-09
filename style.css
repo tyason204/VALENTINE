@@ -1,0 +1,323 @@
+/* General Styles */
+body {
+  font-family: "Bona Nova SC", serif; /* Romantic cursive font */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  
+    background-image: url('https://marketplace.canva.com/EAEUf1ZOyzE/1/0/1600w/canva-pink-and-red-powerful-femme-personal-pattern-valentine%27s-day-desktop-wallpaper-vyLmDobNXOc.jpg'); /* Replace with an actual URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+  
+}
+
+/* Container for the quiz */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto; /* Add scrollbar if content overflows */
+  max-height: 90vh; /* Limit container height */
+}
+
+
+/* Heading */
+h1 {
+  color: #df5260; /* Vibrant pink */
+  font-size: 3.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  
+  font-weight: 700; /* Bold */
+}
+
+
+
+/* Question Box */
+#question-box {
+  margin-bottom: 20px;
+}
+
+#question {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Answer Buttons */
+.answers button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #df5260;
+  border-radius: 50px; /* Rounded buttons */
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-family: "Bona Nova SC", serif; /* Romantic font for buttons */
+}
+
+.answers button:hover {
+  background-color: #f8d7da; /* Light pink on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.answers button:active {
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.answers button.correct {
+  background-color: #d4edda; /* Light green */
+  border-color: #28a745; /* Green */
+}
+
+/* Text Input */
+#text-input {
+  font-size: 1.5em;
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
+  border: 2px solid #df5260;
+  border-radius: 50px; /* Rounded input */
+  display: none; /* Hidden by default */
+  font-family: "Bona Nova SC", serif; /* Romantic font for input */
+  text-align: center;
+}
+
+/* Feedback Message */
+#feedback {
+  font-size: 1.2em;
+  color: #955252;
+  margin-top: 10px;
+  animation: shake 0.5s ease-in-out; /* Shake animation for feedback */
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}
+
+#love-letter {
+  font-family: 'Pacifico', cursive;
+  font-size: 2em; /* Larger font size */
+  color: #560a0a;
+  background-color: #ffbebe;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* More padding for a bigger feel */
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: fixed; /* Center it on the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Take up most of the screen width */
+  max-width: 800px; /* Limit maximum width for readability */
+  max-height: 80vh; /* Limit height to 80% of the viewport height */
+  overflow-y: auto; /* Add scrollbar if content overflows */
+  z-index: 1000; /* Ensure it appears above other elements */
+  border: 5px solid #3f191d; /* Add a border with a vibrant pink color */
+}
+
+#love-letter.show {
+  opacity: 1;
+  transform: translate(-50%, -50%); /* Keep it centered */
+}
+
+/* Progress Bar */
+#progress-bar {
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#progress {
+  height: 100%;
+  width: 0%; /* Updated dynamically */
+  background: #df5260; /* Vibrant pink */
+  border-radius: 5px;
+  transition: width 0.3s ease; /* Smooth progress animation */
+  position: relative;
+}
+
+#progress::after {
+  content: attr(data-progress); /* Dynamic content */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 0.8em;
+  font-family: "Bona Nova SC", serif;
+}
+
+/* Hello Kitty Falling Animation */
+.hello-kitty-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure the falling Hello Kitty images don't interfere with clicks */
+  z-index: 1; /* Place behind quiz content */
+}
+
+.hello-kitty {
+  position: absolute;
+  top: -10%;
+  width: 200px; /* Adjust the size as needed */
+  height: auto; /* Keep the aspect ratio */
+  animation: fallKitty linear infinite; /* Apply falling animation */
+  user-select: none; /* Prevent image selection */
+}
+
+@keyframes fallKitty {
+  0% {
+    top: -10%; /* Start from above the screen */
+    transform: rotate(0deg); /* No rotation initially */
+  }
+  100% {
+    top: 110%; /* End below the screen */
+    transform: rotate(360deg); /* Rotate the Hello Kitty image while falling */
+  }
+}
+
+/* Random positions and delays for Hello Kitty images */
+.hello-kitty:nth-child(1) {
+  left: 5%;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+.hello-kitty:nth-child(2) {
+  left: 10%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.hello-kitty:nth-child(3) {
+  left: 15%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.hello-kitty:nth-child(4) {
+  left: 20%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.hello-kitty:nth-child(5) {
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 5s;
+}
+
+.hello-kitty:nth-child(6) {
+  left: 30%;
+  animation-duration: 9s;
+  animation-delay: 4s;
+}
+
+.hello-kitty:nth-child(7) {
+  left: 35%;
+  animation-duration: 6s;
+  animation-delay: 6s;
+}
+
+.hello-kitty:nth-child(8) {
+  left: 40%;
+  animation-duration: 8s;
+  animation-delay: 8s;
+}
+
+.hello-kitty:nth-child(9) {
+  left: 45%;
+  animation-duration: 10s;
+  animation-delay: 7s;
+}
+
+.hello-kitty:nth-child(10) {
+  left: 50%;
+  animation-duration: 7s;
+  animation-delay: 10s;
+}
+
+.hello-kitty:nth-child(11) {
+  left: 55%;
+  animation-duration: 9s;
+  animation-delay: 9s;
+}
+
+.hello-kitty:nth-child(12) {
+  left: 60%;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+.hello-kitty:nth-child(13) {
+  left: 65%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 8s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 75%;
+  animation-duration: 9s;
+  animation-delay: 5s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 80%;
+  animation-duration: 9s;
+  animation-delay: 7s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 85%;
+  animation-duration: 9s;
+  animation-delay: 8s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 90%;
+  animation-duration: 9s;
+  animation-delay: 6s;
+}
+
+.hello-kitty:nth-child(14) {
+  left: 95%;
+  animation-duration: 9s;
+  animation-delay: 5s;
+}
+/* You can continue adding more Hello Kitty images by copying and adjusting the styles */
